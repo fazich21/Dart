@@ -1,0 +1,102 @@
+import 'dart:io';
+
+class Queue {
+  late int size;
+  late List<int> elements;
+  int front = -1;
+  int rear = -1;
+
+  Queue(int size) {
+    this.size = size;
+    elements = List<int>.filled(size, 0);
+  }
+
+  bool isFull() {
+    return rear == size - 1;
+  }
+
+  bool isEmpty() {
+    return front == -1;
+  }
+
+  void enQueue(int element) {
+    if (isFull()) {
+      print("Queue is full ");
+      return;
+    }
+    if (front == -1) {
+      front = 0;
+    }
+    rear++;
+    elements[rear] = element;
+    print("$element entered to the queue ");
+  }
+
+  void deQueue() {
+    if (isEmpty()) {
+      print("Queue is empty ");
+      return;
+    }
+    int element = elements[front];
+    if (front == rear) {
+      front = rear = -1;
+    } else {
+      front++;
+    }
+    print("$element deleted from the queue ");
+  }
+
+  void display() {
+    if (isEmpty()) {
+      print("Queue is empty");
+      return;
+    }
+    print("Elements in the queue ");
+    for (int i = front; i <= rear; i++) {
+      print(elements[i]);
+    }
+  }
+}
+
+void main() {
+  print("Enter the size of queue =");
+  int size = int.parse(stdin.readLineSync()!);
+  Queue queue = Queue(size);
+
+  while (true) {
+    print("1. isFull");
+    print("2. isEmpty");
+    print("3. enQueue");
+    print("4. deQueue");
+    print("5. display");
+    print("6. exit");
+    print("Enter your choice =");
+
+    int choice = int.parse(stdin.readLineSync()!);
+
+    switch (choice) {
+      case 1:
+        print("Queue is full = ${queue.isFull()}");
+        break;
+      case 2:
+        print("Queue is empty = ${queue.isEmpty()}");
+        break;
+      case 3:
+        print("Enter the element to enqueue/enter =");
+        int element = int.parse(stdin.readLineSync()!);
+        queue.enQueue(element);
+        break;
+      case 4:
+        queue.deQueue();
+        break;
+      case 5:
+        queue.display();
+        break;
+      case 6:
+        print("Exiting ");
+        return;
+      default:
+        print("Invalid choice");
+    }
+  }
+}
