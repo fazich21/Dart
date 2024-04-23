@@ -29,7 +29,7 @@ class Queue {
     }
     rear++;
     elements[rear] = element;
-    print("$element entered to the queue ");
+    print("$Element entered to the queue ");
   }
 
   void deQueue() {
@@ -43,7 +43,7 @@ class Queue {
     } else {
       front++;
     }
-    print("$element deleted from the queue ");
+    print("$Element deleted from the queue ");
   }
 
   void display() {
@@ -93,10 +93,10 @@ void main() {
         queue.display();
         break;
       case 6:
-        print("Exiting ");
+        print("Exiting... ");
         return;
       default:
-        print("Invalid choice");
+        print(" your choice is invalid");
     }
   }
 }
