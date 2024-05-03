@@ -29,7 +29,7 @@ class Queue {
     }
     rear++;
     elements[rear] = element;
-    print("$Element entered to the queue ");
+    print("$Element Entered to the Queue ");
   }
 
   void deQueue() {
@@ -43,7 +43,7 @@ class Queue {
     } else {
       front++;
     }
-    print("$Element deleted from the queue ");
+    print("$Element deleted from the Queue ");
   }
 
   void display() {
@@ -51,7 +51,7 @@ class Queue {
       print("Queue is empty");
       return;
     }
-    print("Elements in the queue ");
+    print("Elements in the Queue ");
     for (int i = front; i <= rear; i++) {
       print(elements[i]);
     }
