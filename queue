@@ -43,7 +43,7 @@ class Queue {
     } else {
       front++;
     }
-    print("$Element Deleted from the Queue ");
+    print("$Element Deleted From the Queue ");
   }
 
   void display() {
@@ -59,7 +59,7 @@ class Queue {
 }
 
 void main() {
-  print("Enter the size of queue =");
+  print("Enter the size of Queue =");
   int size = int.parse(stdin.readLineSync()!);
   Queue queue = Queue(size);
 
