@@ -82,7 +82,7 @@ void main() {
         print("Queue is empty = ${queue.isEmpty()}");
         break;
       case 3:
-        print("Enter the element to enqueue/enter =");
+        print("Enter the Element to EnQueue/enter =");
         int element = int.parse(stdin.readLineSync()!);
         queue.enQueue(element);
         break;
